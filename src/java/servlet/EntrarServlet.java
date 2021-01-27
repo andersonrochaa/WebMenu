@@ -36,39 +36,40 @@ public class EntrarServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String text = null;
         try {
             Estabelecimento est = new Estabelecimento();
             EstabelecimentoDAO estdao = new EstabelecimentoDAO();
 
             est.setEmail(request.getParameter("email").toLowerCase());
             est.setSenha(request.getParameter("senha"));
-            String text = null;
 
             if (estdao.validarSessao(est)) {
 
                 HttpSession session = request.getSession(true);
                 int idest = est.getIdestabelecimento();
                 session.setAttribute("user_id", Integer.valueOf(idest));
-                
+
                 est = estdao.listarEstabelecimentoId(idest);
-                
+
                 session.setAttribute("user_name", est.getNome());
                 session.setAttribute("user_image", est.getImagem());
 
                 //Cookie user_id = new Cookie("test", "LOGADO");
                 //response.addCookie(user_id);
-                text = "<script type='text/javascript'> alert('LOGADO "+est.getNome()+"')</script>";
+                text = "<script type='text/javascript'> alert('LOGADO " + est.getNome() + "')</script>";
 
             } else {
                 text = "<script type='text/javascript'> alert('INVALIDO')</script>";
 
             }
-            request.setAttribute("registrar_msg", text);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+
         } catch (SQLException ex) {
             Logger.getLogger(EntrarServlet.class.getName()).log(Level.SEVERE, null, ex);
             //getServletContext().getRequestDispatcher("/views/error.jsp").include(request, response);
         }
+        request.setAttribute("registrar_msg", text);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
 
     }
 
