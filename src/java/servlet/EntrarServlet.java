@@ -68,8 +68,9 @@ public class EntrarServlet extends HttpServlet {
             Logger.getLogger(EntrarServlet.class.getName()).log(Level.SEVERE, null, ex);
             //getServletContext().getRequestDispatcher("/views/error.jsp").include(request, response);
         }
-        request.setAttribute("registrar_msg", text);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        //request.setAttribute("registrar_msg", text);
+        //request.getRequestDispatcher("dashboard\\dashboard.html").forward(request, response);
+        response.sendRedirect("cardapio.jsp");
 
     }
 

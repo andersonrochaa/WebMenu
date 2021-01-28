@@ -68,6 +68,7 @@
 
 
     </head>
+    <%@include file="validarsessao.jsp" %>
     <body data-spy="scroll" data-target=".fixed-top">
 
         <!-- Preloader -->
@@ -80,10 +81,48 @@
         </div>
         <!-- end of preloader -->
 
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Leno</a> -->
 
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="index.jsp"><img src="images/logo.svg" alt="alternative"></a> 
 
-        <jsp:include page="navmenu.jsp"/>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+            <!-- end of mobile menu toggle button -->
 
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-login">ENTRAR</a>
+                        <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-register">REGISTRAR</a>
+                    </li>  
+                </ul>
+
+                <!--
+                <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="#your-link">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="#your-link">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span> -->
+            </div> 
+
+        </nav> <!-- end of navbar -->
+        <!-- end of navbar -->
 
         <!-- Header -->
         <header id="header" class="header">
@@ -565,9 +604,8 @@
                             <input type="password" class="form-control-input" name="senha">
                             <label class="label-control">senha</label>
                             <div class="help-block with-errors"></div>
-                        </div>                      
-                        <div class="form-group">                           
-                            <a class="btn-solid-reg" href="#" onclick="entrar('EntrarServlet')">REGISTRAR</a>
+                        
+                            <a class="btn-solid-reg" href="#" onclick="entrar('EntrarServlet')">ENTRAR</a>
                         </div>
                         <div class="form-group">
                             <center>
