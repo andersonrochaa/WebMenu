@@ -8,9 +8,6 @@ package servlet;
 import dao.EstabelecimentoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +19,7 @@ import model.EstabelecimentoModel;
  *
  * @author Alexandre
  */
-public class UpdateEndereco extends HttpServlet {
+public class UpdateEstabelecimento extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,36 +32,30 @@ public class UpdateEndereco extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try{            
+        try{
             HttpSession session = request.getSession(true);
             EstabelecimentoModel est = new EstabelecimentoModel(); //getServletContext().getRequestDispatcher("/views/error.jsp").include(request, response);
             EstabelecimentoDAO estdao = new EstabelecimentoDAO();
-            est.setEstado(request.getParameter("estado"));
-            est.setBairro(request.getParameter("bairro"));
-            est.setCidade(request.getParameter("cidade"));
-            est.setLogradouro(request.getParameter("logradouro"));
-            est.setComplemento(request.getParameter("complemento"));
-
-            if(!request.getParameter("numero").isEmpty()){
-                est.setNumero(Integer.parseInt(request.getParameter("numero")));
-            }else{
-                est.setNumero(0);
-            }
-
 
             int idestabelecimento = (Integer) session.getAttribute("user_id");
-
             est.setIdestabelecimento(idestabelecimento);
 
-            boolean update = estdao.updateEndereco(est);
-            String text="";
+            est.setNome(request.getParameter("nome"));
+            est.setEmail(request.getParameter("email"));
+            est.setDescricao(request.getParameter("descricao"));
+            est.setTelefone(request.getParameter("telefone"));
+
+            boolean update = estdao.updateEstabelecimento(est);
+            String text = "";
             if (update) {
+                session.setAttribute("user_name", est.getNome());
+                session.setAttribute("user_imagem", est.getImagem());
                 text = "Alterações realizadas com sucesso!";
             } else {
                 text = "Falha ao tentar realizar as alterações";
             }
             request.setAttribute("status", text);
-            request.getRequestDispatcher("endereco").forward(request, response);
+            request.getRequestDispatcher("estabelecimento").forward(request, response);
         }catch(Exception e){
             response.sendRedirect("index.jsp");
         }

@@ -12,7 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Estabelecimento;
+import model.EstabelecimentoModel;
 
 /**
  *
@@ -32,14 +32,14 @@ public class CadastrarServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        Estabelecimento est = new Estabelecimento();
+        EstabelecimentoModel est = new EstabelecimentoModel();
         EstabelecimentoDAO estdao = new EstabelecimentoDAO();
 
         est.setEmail(request.getParameter("email").toLowerCase());
         est.setSenha(request.getParameter("senha"));
         est.setNome(request.getParameter("nome"));
-        est.setTelefone(Double.parseDouble(request.getParameter("telefone")));
-
+        est.setTelefone(request.getParameter("telefone"));
+        
         int status = estdao.cadastrar(est);
         String text = null;
         if (status == 1) {

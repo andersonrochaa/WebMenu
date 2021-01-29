@@ -66,61 +66,33 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="white-box">
-                                <h3 class="box-title">Basic Table</h3>
-                                <p class="text-muted">Add class <code>.table</code></p>
+                                <h3 class="box-title">Categoria</h3>
+                                <p class="text-muted">Descrição da categoria.<!--<code>.table</code>--></p>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th class="border-top-0">#</th>
-                                                <th class="border-top-0">First Name</th>
-                                                <th class="border-top-0">Last Name</th>
-                                                <th class="border-top-0">Username</th>
-                                                <th class="border-top-0">Role</th>
+                                                <th class="border-top-0">Nome</th>
+                                                <th class="border-top-0">Descrição</th>
+                                                <th class="border-top-0">Preço</th>
+                                                <th class="border-top-0"></th>
+                                                <th class="border-top-0"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>admin</td>
+                                                <td>Hamburguer de Frango</td>
+                                                <td>Pão, blend 100g, salada, queijo, molho especial e ketchup</td>
+                                                <td>15,99</td>
+                                                <td>Excluir</td>
+                                                <td>Editar</td>
                                             </tr>
                                             <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                                <td>member</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                                <td>developer</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                                <td>supporter</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                                <td>member</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                                <td>supporter</td>
+                                                <td>Hamburguer de Cachorro</td>
+                                                <td>Pão, blend 100g, salada, queijo, molho especial e ketchup</td>
+                                                <td>18,99</td>
+                                                <td>Excluir</td>
+                                                <td>Editar</td>
                                             </tr>
                                         </tbody>
                                     </table>

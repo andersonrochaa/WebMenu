@@ -8,10 +8,10 @@
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/estabelecimento.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/estatistica.jsp</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/UpdateEstabelecimento.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/validarsessao.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/dao/EstabelecimentoDAO.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/CadastrarServlet.java</file>
-            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/model/Estabelecimento.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/cardapio.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/qrcode.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/blank.jsp</file>
@@ -20,9 +20,13 @@
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/head.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/dao/Conexao.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/endereco.jsp</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/MeuEstabelecimento.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/css/bootstrap.css</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/menu.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/UpdateEndereco.java</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/MeuEndereco.java</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/model/EstabelecimentoModel.java</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/css_dashboard/style.css</file>
         </group>
     </open-files>
 </project-private>

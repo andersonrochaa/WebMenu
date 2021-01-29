@@ -5,13 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="model.Estabelecimento"%>
-<%@page import="dao.EstabelecimentoDAO"%>
-<%
-    Estabelecimento est = new Estabelecimento();
-    EstabelecimentoDAO estdao = new EstabelecimentoDAO();
-    est = estdao.listarEstabelecimentoId((Integer) session.getAttribute("user_id"));
-%>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -30,7 +23,6 @@
     </head>
 
     <body>
-        ${registrar_msg}
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
@@ -444,9 +436,7 @@
                                         <label class="col-md-12 p-0">Estado</label>
                                         <div class="col-md-12 border-bottom p-0">
                                             <select class="form-control p-0 border-0" id="sigla" onchange="javascript:pegarsigla();">
-                                                <%if (est.getEstado() != null) {
-                                                        out.print("<option value='" + est.getEstado() + "'>" + est.getEstado() + "</option>");
-                                                    }%>
+                                                <option value="AC">${estado}</option>
                                                 <option value="AC">Acre</option>
                                                 <option value="AL">Alagoas</option>
                                                 <option value="AP">Amapá</option>
@@ -475,55 +465,58 @@
                                                 <option value="SE">Sergipe</option>
                                                 <option value="TO">Tocantins</option>
                                             </select> 
-                                            <input type="hidden" id="sigla_hidden" name="estado" value="<%out.print(est.getEstado());%>">
+                                            <input type="hidden" id="sigla_hidden" name="estado" value="${estado}">
                                         </div>
                                         <div class="form-group mb-4">
                                             <label for="cidade" class="col-md-12 p-0">Cidade</label>
                                             <div class="col-md-12 border-bottom p-0">
                                                 <input type="text" placeholder="Brasília, Salvador, Rio Branco..."
                                                        class="form-control p-0 border-0" name="cidade"
-                                                       id="example-email" value="<%if (est.getCidade() != null) {
-                                                               out.print(est.getCidade());
-                                                           }%>">
+                                                       id="example-email" value="${cidade}">
                                             </div>
                                             <label for="bairro" class="col-md-12 p-0">Bairro</label>
                                             <div class="col-md-12 border-bottom p-0">
                                                 <input type="text" placeholder="Ipanema, Lagoa, Botafogo..."
                                                        class="form-control p-0 border-0" name="bairro"
-                                                       id="example-email" value="<%if (est.getBairro() != null) {
-                                                               out.print(est.getBairro());
-                                                           }%>">
+                                                       id="example-email" value="${bairro}">
                                             </div>
                                             <label for="logradouro" class="col-md-12 p-0">Logradouro</label>
                                             <div class="col-md-12 border-bottom p-0">
                                                 <input type="text" placeholder="Rua 25 de Março,Avenida Vereador Abel Ferreira... "
                                                        class="form-control p-0 border-0" name="logradouro"
-                                                       id="example-email" value="<%if (est.getLogradouro() != null) {
-                                                               out.print(est.getLogradouro());
-                                                           }%>">
+                                                       id="example-email" value="${logradouro}">
                                             </div>
                                             <label for="numero" class="col-md-12 p-0">Número</label>
                                             <div class="col-md-12 border-bottom p-0">
                                                 <input type="number" placeholder="145, 85, 25... "
                                                        class="form-control p-0 border-0" name="numero"
-                                                       id="zikavirus">             
+                                                       id="input_numero" >             
                                             </div>
                                             <label class="col-md-12 p-0">Complemento</label>
                                             <div class="col-md-12 border-bottom p-0">
                                                 <input type="text" placeholder="Próximo ao shopping, Prédio pitangueira... "
                                                        class="form-control p-0 border-0" name="complemento"
-                                                       id="example-email" value="<%if (est.getComplemento() != null) {
-                                                               out.print(est.getComplemento());
-                                                           }%>">
+                                                       id="example-email" value="${complemento}">
                                             </div>
                                         </div>                                       
                                         <div class="form-group mb-0">
                                             <div class="col-sm-0">
                                                 <input type="submit" class="btn btn-success" value="Update Endereço">                                                 
                                             </div>
+
                                         </div>
-                                </form>
+                                </form>     
+                                                                                 
+                                <script type="text/javascript">
+                                    //function valornumero(){
+                                    const input_numero = document.getElementById('input_numero');
+                                    input_numero.value = ${numero};
+
+                                    const sigla = document.getElemen
+                                    //}
+                                </script>
                             </div>
+                                       <label style="color: red">${status}</label>
                         </div>
                     </div>
                     <!-- Column -->

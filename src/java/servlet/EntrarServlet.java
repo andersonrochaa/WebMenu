@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Estabelecimento;
+import model.EstabelecimentoModel;
 
 /**
  *
@@ -38,7 +38,7 @@ public class EntrarServlet extends HttpServlet {
             throws ServletException, IOException {
         String text = null;
         try {
-            Estabelecimento est = new Estabelecimento();
+            EstabelecimentoModel est = new EstabelecimentoModel();
             EstabelecimentoDAO estdao = new EstabelecimentoDAO();
 
             est.setEmail(request.getParameter("email").toLowerCase());

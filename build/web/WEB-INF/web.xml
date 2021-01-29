@@ -16,6 +16,22 @@
         <servlet-name>UpdateEndereco</servlet-name>
         <servlet-class>servlet.UpdateEndereco</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Estabelecimento</servlet-name>
+        <servlet-class>servlet.Estabelecimento</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MeuEstabelecimento</servlet-name>
+        <servlet-class>servlet.MeuEstabelecimento</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateEstabelecimento</servlet-name>
+        <servlet-class>servlet.UpdateEstabelecimento</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MeuEndereco</servlet-name>
+        <servlet-class>servlet.MeuEndereco</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarServlet</servlet-name>
         <url-pattern>/CadastrarServlet</url-pattern>
@@ -31,6 +47,18 @@
     <servlet-mapping>
         <servlet-name>UpdateEndereco</servlet-name>
         <url-pattern>/UpdateEndereco</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MeuEstabelecimento</servlet-name>
+        <url-pattern>/estabelecimento</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateEstabelecimento</servlet-name>
+        <url-pattern>/UpdateEstabelecimento</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MeuEndereco</servlet-name>
+        <url-pattern>/endereco</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

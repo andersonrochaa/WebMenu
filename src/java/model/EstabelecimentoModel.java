@@ -5,13 +5,13 @@
  */
 package model;
 
-public class Estabelecimento {
+public class EstabelecimentoModel {
     private int idestabelecimento;
     private String nome;
     private String email;
     private String senha;
     private String descricao;
-    private double telefone;
+    private String telefone;
     private String imagem;
     private String logradouro;
     private String bairro;
@@ -22,10 +22,10 @@ public class Estabelecimento {
     private double lati;
     private String complemento;
 
-    public Estabelecimento() {
+    public EstabelecimentoModel() {
     }
 
-    public Estabelecimento(int idestabelecimento, String nome, String email, String senha, String descricao, double telefone, String imagem, String logradouro, String bairro, int numero, String cidade, String estado, double log, double lati, String complemento) {
+    public EstabelecimentoModel(int idestabelecimento, String nome, String email, String senha, String descricao, String telefone, String imagem, String logradouro, String bairro, int numero, String cidade, String estado, double log, double lati, String complemento) {
         this.idestabelecimento = idestabelecimento;
         this.nome = nome;
         this.email = email;
@@ -91,11 +91,11 @@ public class Estabelecimento {
         this.descricao = descricao;
     }
 
-    public double getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(double telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

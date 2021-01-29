@@ -91,14 +91,14 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="estabelecimento.jsp"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="estabelecimento"
                                aria-expanded="false">
                                 <i class="fas fa-warehouse" aria-hidden="true"></i>
                                 <span class="hide-menu">Meu Estabelecimento</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="endereco.jsp"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="endereco"
                                aria-expanded="false">
                                 <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 <span class="hide-menu">Endereço</span>
