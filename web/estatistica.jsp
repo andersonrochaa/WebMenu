@@ -120,11 +120,13 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <!--
                                 <div id="ct-visits" style="height: 405px;">
                                     <div class="chartist-tooltip" style="top: -17px; left: -12px;"><span
                                             class="chartist-tooltip-value">6</span>
                                     </div>
                                 </div>
+                                -->
                             </div>
                         </div>
                     </div>

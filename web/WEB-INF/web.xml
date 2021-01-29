@@ -12,6 +12,10 @@
         <servlet-name>SairServlet</servlet-name>
         <servlet-class>servlet.SairServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateEndereco</servlet-name>
+        <servlet-class>servlet.UpdateEndereco</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarServlet</servlet-name>
         <url-pattern>/CadastrarServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>SairServlet</servlet-name>
         <url-pattern>/SairServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateEndereco</servlet-name>
+        <url-pattern>/UpdateEndereco</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

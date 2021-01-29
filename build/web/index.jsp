@@ -3,7 +3,6 @@
     Created on : 25/01/2021, 14:52:42
     Author     : Alexandre
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -68,9 +67,11 @@
 
 
     </head>
-    <%@include file="validarsessao.jsp" %>
     <body data-spy="scroll" data-target=".fixed-top">
-
+        <%
+        if (session.getAttribute("user_id") != null) {
+        response.sendRedirect("cardapio.jsp");
+        }%>
         <!-- Preloader -->
         <div class="spinner-wrapper">
             <div class="spinner">
@@ -604,7 +605,8 @@
                             <input type="password" class="form-control-input" name="senha">
                             <label class="label-control">senha</label>
                             <div class="help-block with-errors"></div>
-                        
+                        </div>
+                        <div class="form-group">
                             <a class="btn-solid-reg" href="#" onclick="entrar('EntrarServlet')">ENTRAR</a>
                         </div>
                         <div class="form-group">

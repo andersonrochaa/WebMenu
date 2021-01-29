@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +22,7 @@ import model.Estabelecimento;
  *
  * @author Alexandre
  */
-public class EntrarServlet extends HttpServlet {
+public class UpdateEndereco extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,44 +35,45 @@ public class EntrarServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String text = null;
-        try {
-            Estabelecimento est = new Estabelecimento();
-            EstabelecimentoDAO estdao = new EstabelecimentoDAO();
+        HttpSession session = request.getSession(true);
 
-            est.setEmail(request.getParameter("email").toLowerCase());
-            est.setSenha(request.getParameter("senha"));
-
-            if (estdao.validarSessao(est)) {
-
-                HttpSession session = request.getSession(true);
-                int idest = est.getIdestabelecimento();
-                session.setAttribute("user_id", Integer.valueOf(idest));
-                
-                //int id = (Integer) session.getAttribute("user_id");
-                
-                est = estdao.listarEstabelecimentoId(idest);
-
-                session.setAttribute("user_name", est.getNome());
-                session.setAttribute("user_image", est.getImagem());
-
-                //Cookie user_id = new Cookie("test", "LOGADO");
-                //response.addCookie(user_id);
-                text = "<script type='text/javascript'> alert('LOGADO " + est.getNome() + "')</script>";
-
-            } else {
-                text = "<script type='text/javascript'> alert('INVALIDO')</script>";
-
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(EntrarServlet.class.getName()).log(Level.SEVERE, null, ex);
-            //getServletContext().getRequestDispatcher("/views/error.jsp").include(request, response);
+        Estabelecimento est = new Estabelecimento(); //getServletContext().getRequestDispatcher("/views/error.jsp").include(request, response);
+        EstabelecimentoDAO estdao = new EstabelecimentoDAO();
+        est.setEstado(request.getParameter("estado"));
+        est.setBairro(request.getParameter("bairro"));
+        est.setCidade(request.getParameter("cidade"));
+        est.setLogradouro(request.getParameter("logradouro"));
+        est.setComplemento(request.getParameter("complemento"));
+        
+        if(Integer.parseInt(request.getParameter("numero")) > -1){
+            est.setNumero(Integer.parseInt(request.getParameter("numero")));
+        }else{
+            est.setNumero(1);
         }
-        //request.setAttribute("registrar_msg", text);
-        //request.getRequestDispatcher("dashboard\\dashboard.html").forward(request, response);
-        response.sendRedirect("cardapio.jsp");
+        
 
+        int idestabelecimento = (Integer) session.getAttribute("user_id");
+
+        est.setIdestabelecimento(idestabelecimento);
+
+        boolean update = estdao.updateEndereco(est);
+
+        String text = "";
+        if (update) {
+            text = "<script type=\"text/javascript\"> alert('Update')</script>";
+        } else {
+            text = "<script type=\"text/javascript\"> alert('Falha')</script>";
+        }
+        /*
+        est.setEmail(request.getParameter("email").toLowerCase());
+        est.setSenha(request.getParameter("senha"));
+        est.setNome(request.getParameter("nome"));
+        est.setTelefone(Double.parseDouble(request.getParameter("telefone")));
+
+        int status = estdao.cadastrar(est);*/
+
+        request.setAttribute("registrar_msg", text);
+        request.getRequestDispatcher("endereco.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

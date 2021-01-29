@@ -49,6 +49,7 @@ public class EstabelecimentoDAO {
         }
         return 0;
     }
+
     public boolean validarSessao(Estabelecimento est) throws SQLException {
         try {
             String sql = "SELECT idestabelecimento, email, senha, nome FROM estabelecimento WHERE email = ?";
@@ -74,7 +75,8 @@ public class EstabelecimentoDAO {
         return false;
 
     }
-    public Estabelecimento listarEstabelecimentoId(int id){
+
+    public Estabelecimento listarEstabelecimentoId(int id) {
         try {
             Estabelecimento est = new Estabelecimento();
             String sql = "select * from estabelecimento where idestabelecimento = ?";
@@ -88,15 +90,44 @@ public class EstabelecimentoDAO {
                 est.setEmail(rs.getString("email"));
                 est.setNome(rs.getString("nome"));
                 est.setImagem(rs.getString("imagem"));
+                est.setEstado(rs.getString("estado"));
+                est.setCidade(rs.getString("cidade"));
+                est.setBairro(rs.getString("bairro"));
+                est.setLogradouro(rs.getString("logradouro"));
+                est.setComplemento(rs.getString("complemento"));
+                est.setNumero(rs.getInt("numero"));
+                est.setLati(rs.getDouble("lati"));
+                est.setLog(rs.getDouble("long"));
             }
 
             return est;
 
         } catch (SQLException ex) {
             Logger.getLogger(EstabelecimentoDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return null;        
+            return null;
         }
 
+    }
 
-    }//fim método listarPessoa
+    public boolean updateEndereco(Estabelecimento est) {
+        try {
+            String sql = "update estabelecimento set Logradouro = ?, bairro=?,numero=?,cidade=?,estado=?,complemento=? where idestabelecimento = ?";
+            PreparedStatement ps = conBD.abrirConexao().prepareStatement(sql);
+            ps.setString(1, est.getLogradouro());
+            ps.setString(2, est.getBairro());
+            ps.setInt(3, est.getNumero());
+            ps.setString(4, est.getCidade());
+            ps.setString(5, est.getEstado());
+            ps.setString(6, est.getComplemento());
+            ps.setInt(7, est.getIdestabelecimento());
+            
+            ps.executeUpdate();
+
+            return true;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EstabelecimentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
 }

@@ -5,24 +5,24 @@
         <group>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/index.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/EntrarServlet.java</file>
-            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/dashboard/fontawesome.html</file>
-            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/dashboard/blank.jsp</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/estabelecimento.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/estatistica.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/validarsessao.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/dao/EstabelecimentoDAO.java</file>
-            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/dashboard/menu.jsp</file>
-            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/dashboard/basic-table.html</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/CadastrarServlet.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/model/Estabelecimento.java</file>
-            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/dashboard/index.html</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/cardapio.jsp</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/qrcode.jsp</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/blank.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/SairServlet.java</file>
-            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/dashboard/blank.html</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/privacy-policy.html</file>
-            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/dashboard/estatistica.jsp</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/head.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/dao/Conexao.java</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/endereco.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/css/bootstrap.css</file>
-            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/dashboard/map-google.html</file>
-            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/dashboard/cardapio.jsp</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/menu.jsp</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/UpdateEndereco.java</file>
         </group>
     </open-files>
 </project-private>
