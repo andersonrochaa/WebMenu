@@ -8,6 +8,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/fontawesome-all.css" rel="stylesheet">
+        <link href="css/swiper.css" rel="stylesheet">
+        <link href="css/magnific-popup.css" rel="stylesheet">
+        <link href="css/fontawesome-all.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- Tell the browser to be responsive to screen width -->
@@ -17,7 +26,7 @@
         <meta name="description"
               content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
         <meta name="robots" content="noindex,nofollow">
-        <title>Dashboard</title>
+        <title><%out.print(session.getAttribute("user_name"));%></title>
         <!-- Favicon icon -->
         <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
         <!-- Custom CSS -->
@@ -27,6 +36,6 @@
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <![endif]-->       
     </head>
 </html>

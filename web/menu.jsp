@@ -2,7 +2,7 @@
     <body>
         <%@include file="validarsessao.jsp" %>
         <header class="topbar" data-navbarbg="skin5">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color:4633AF;">
                 <div class="navbar-header" data-logobg="skin6">
                     <!-- ============================================================== -->
                     <!-- Logo -->
@@ -84,7 +84,7 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="cardapio.jsp"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="cardapio"
                                aria-expanded="false">
                                 <i class="fas fa-list-ul" aria-hidden="true"></i>
                                 <span class="hide-menu">Meu Cardápio</span>
@@ -131,13 +131,14 @@
                                 <i class="fa fa-info-circle" aria-hidden="true"></i>
                                 <span class="hide-menu">Error 404</span>
                             </a>
-                        </li>                    
-                        <li class="text-center p-20 upgrade-btn">
-                            <hr>
-                            <a href="SairServlet"
-                               class="btn btn-block btn-danger text-white" target="_self">
-                                Sair</a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="SairServlet"
+                               aria-expanded="false">
+                                <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                                <span class="hide-menu">Sair</span>
+                            </a>
+                        </li> 
                     </ul>
                     
 

@@ -72,7 +72,7 @@ public class EntrarServlet extends HttpServlet {
         }
         //request.setAttribute("registrar_msg", text);
         //request.getRequestDispatcher("dashboard\\dashboard.html").forward(request, response);
-        response.sendRedirect("cardapio.jsp");
+        response.sendRedirect("cardapio");
 
     }
 

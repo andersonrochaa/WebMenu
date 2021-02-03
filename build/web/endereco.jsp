@@ -75,7 +75,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="white-box">
-                                <h3 class="box-title">MEU ENDEREÇO NO GOOGLE MAPS</h3>
+                                <!--<h3 class="box-title">MEU ENDEREÇO NO GOOGLE MAPS</h3>-->
                                 <div id="gmaps-simple" class="gmaps" style="position: relative; overflow: hidden;">
                                     <div
                                         style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">

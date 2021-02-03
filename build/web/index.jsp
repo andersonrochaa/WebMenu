@@ -44,7 +44,7 @@
                 let senha = document.getElementById("senha1_reg").value;
                 let senha2 = document.getElementById("senha2_reg").value;
                 var msg = document.getElementById("cmsgSubmit");
-                if (senha == senha2) {
+                if (senha == senha2){
                     if (senha.length >= 8) {
                         document.forms['form_register'].action = txt;
                         document.forms['form_register'].submit();
@@ -69,8 +69,8 @@
     </head>
     <body data-spy="scroll" data-target=".fixed-top">
         <%
-        if (session.getAttribute("user_id") != null) {
-        response.sendRedirect("cardapio.jsp");
+            if (session.getAttribute("user_id") != null) {
+            response.sendRedirect("cardapio");
         }%>
         <!-- Preloader -->
         <div class="spinner-wrapper">

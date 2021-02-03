@@ -5,6 +5,7 @@
 
     <head>
         <%@include file="head.jsp" %>
+        
 
         <script type="text/javascript">
             function updateEstabelecimento(txt) {
@@ -63,41 +64,33 @@
                 <!-- ============================================================== -->
                 <!-- Container fluid  -->
                 <!-- ============================================================== -->
-                <div class="container-fluid">
-                    <!-- ============================================================== -->
-                    <!-- Start Page Content -->
-                    <!-- ============================================================== -->
-                    <!-- Row -->
-                    <div class="row">
-                        <!-- Column -->
-                        <div class="col-lg-4 col-xlg-3 col-md-12">
-                            <div class="white-box">
-                                <div class="user-bg"> 
-                                    <div class="overlay-box">
-                                        <div class="user-content">
-                                            <a href="javascript:void(0)"><img src="plugins/images/users/${imagem}"
-                                                                              class="thumb-lg img-circle" alt="img"></a>
-                                            <h4 class="text-white mt-2">${nome}</h4>
-                                            <h5 class="text-white mt-2">${email}</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="user-btm-box mt-5 d-md-flex">
-                                    <div class="col-md-4 col-sm-4 text-center">
-                                        <h1>258</h1>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4 text-center">
-                                        <h1>125</h1>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4 text-center">
-                                        <h1>556</h1>
+                            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12">
+                        <div class="white-box">
+                            <div class="user-bg"> <img alt="user" src="plugins/images/large/img1.jpg">
+                                <div class="overlay-box">
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="plugins/images/users/${imagem}"
+                                                class="thumb-lg img-circle" alt="img"></a>
+                                        <h4 class="text-white mt-2">${nome}</h4>
+                                        <h5 class="text-white mt-2">Bar&Boteco</h5>
                                     </div>
                                 </div>
                             </div>
+                            <div class="user-btm-box mt-5 d-md-flex">
+                                <p>${descricao}</p>
+                            </div>
                         </div>
-                        <!-- Column -->
-                        <!-- Column -->
-                        <div class="col-lg-8 col-xlg-9 col-md-12">
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
                             <div class="card">
                                 <div class="card-body">
                                     <form class="form-horizontal form-material" id="form_estabelecimento" method="POST">
@@ -109,7 +102,7 @@
                                         </div>
                                         <div class="form-group mb-4">
                                             <label for="example-email" class="col-md-12 p-0">Email</label>
-                                            <div class="col-md-12 border-bottom p-0">
+                                            <div class="col-md-6 border-bottom p-0">
                                                 <input type="email" placeholder="estabelecimento@web.com"
                                                        class="form-control p-0 border-0"
                                                        id="example-email"  name="email" value="${email}">
@@ -129,7 +122,22 @@
                                                 <input type="tel" placeholder="99999999999" maxlength="11"
                                                        class="form-control p-0 border-0"  name="telefone" value="${telefone}"
                                                        id="example-email">
-                                                <input type="text">
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="example-email" class="col-md-12 p-0">Imagem de Perfil</label>
+                                            <div class="col-md-12 border-bottom p-0">
+                                                <input type="file" 
+                                                       class="form-control p-0 border-0"  name="telefone"
+                                                       id="example-email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="example-email" class="col-md-12 p-0">Imagem de Banner</label>
+                                            <div class="col-md-12 border-bottom p-0">
+                                                <input type="file" 
+                                                       class="form-control p-0 border-0"  name="telefone"
+                                                       id="example-email">
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
@@ -138,24 +146,24 @@
                                             </div>
                                         </div>
                                         <label style="color: red">${status}</label>
-                                    </form>
-                                </div>
+                                    </form>                                   
+                                </div>                                   
                             </div>
-                        </div>
-                        <!-- Column -->
                     </div>
-                    <!-- Row -->
-                    <!-- ============================================================== -->
-                    <!-- End PAge Content -->
-                    <!-- ============================================================== -->
-                    <!-- ============================================================== -->
-                    <!-- Right sidebar -->
-                    <!-- ============================================================== -->
-                    <!-- .right-sidebar -->
-                    <!-- ============================================================== -->
-                    <!-- End Right sidebar -->
-                    <!-- ============================================================== -->
+                    <!-- Column -->
                 </div>
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
                 <!-- ============================================================== -->
                 <!-- End Container fluid  -->
                 <!-- ============================================================== -->
