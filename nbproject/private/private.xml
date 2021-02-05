@@ -17,6 +17,7 @@
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/dao/CategoriaDAO.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/dao/Conexao.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/MeuEstabelecimento.java</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/CriarItem.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/menu.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/UpdateEndereco.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/model/EstabelecimentoModel.java</file>
@@ -24,6 +25,7 @@
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/EntrarServlet.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/model/ItemModel.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/estatistica.jsp</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/404.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/validarsessao.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/MeuCardapio.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/CadastrarServlet.java</file>
@@ -32,6 +34,7 @@
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/qrcode.jsp</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/CriarCategoria.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/blank.jsp</file>
+            <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/src/java/servlet/SairServlet.java</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/scss/style.scss</file>
             <file>file:/C:/Users/Alexandre/Documents/TCC/WebMenu/web/endereco.jsp</file>

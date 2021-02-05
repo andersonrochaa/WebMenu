@@ -32,7 +32,25 @@
 
             }
         </script>
+        <style>
+            .dropdown {
+                position:absolute;
+                display: inline-block;
+            }
 
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                padding: 12px 16px;
+                z-index: 1;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        </style>
     </head>
 
     <body>
@@ -67,9 +85,8 @@
                                 <ol class="breadcrumb ml-auto">
                                     <li><a href="#">Dashboard</a></li>
                                 </ol>
-                                <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
-                                   class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Upgrade
-                                    to Pro</a>
+                                <a href="#" target="_blank"
+                                   class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Ver cardápio</a>
                             </div>
                         </div>
                     </div>
@@ -97,42 +114,48 @@
                                 </div>
                                 <div class="table-responsive">
                                     <form method="post" id="form_itens">
-                                    <table class="table no-wrap">
-                                        <%for (int i = 0; i < catList.size(); i++) {%>                                        
-                                        <thead>
-                                            <tr>
-                                                <th class="border-top-0">IMAGEM</th>
-                                                <th class="border-top-0"><%out.print(catList.get(i).getNome());%></th>
-                                                <th class="border-top-0">DESCRIÇÃO</th>
-                                                <th class="border-top-0">PREÇO</th>
-                                                <th class="border-top-0"><a href='excluircategoria?keycategoria=<%out.print(catList.get(i).getIdcategoria());%>'><i class="fas fa-trash-alt"></i></th>
-                                            </tr>
-                                        </thead>
-                                        <%  catList.get(i).setEstabelecimento_idestabelecimento((Integer) session.getAttribute("user_id"));
-                                            List<ItemModel> itens = itemdao.listarItem(catList.get(i));
-                                            for (int o = 0; o < itens.size(); o++) {%>
-                                        <tbody>
-                                            <tr>
-                                                <td class="txt-oflo"><img src="plugins/images/users/<%out.print(session.getAttribute("user_image"));%>" alt="user-img" width="36" class="img-circle"></td>
-                                                <td class="txt-oflo"><%out.print(itens.get(o).getNome());%></td>
-                                                <td class="txt-oflo"><%out.print(itens.get(o).getDescricao());%></td>
-                                                <td><span class="text-success">R$<%out.print(itens.get(o).getPreco());%></span></td>
-                                                <td><span class="text-success">EDITAR</span></td>
+                                        <table class="table no-wrap">
+                                            <%for (int i = 0; i < catList.size(); i++) {%>                                        
+                                            <thead>
+                                                <tr>
+                                                    <th class="border-top-0">IMAGEM</th>
+                                                    <th class="border-top-0"><%out.print(catList.get(i).getNome());%></th>
+                                                    <th class="border-top-0">DESCRIÇÃO</th>
+                                                    <th class="border-top-0">PREÇO</th>
+                                                    <th class="border-top-0"><a href='excluircategoria?keycategoria=<%out.print(catList.get(i).getIdcategoria());%>'><i class="fas fa-trash-alt"></i></a></th>
+                                                </tr>
+                                            </thead>
+                                            <%  catList.get(i).setEstabelecimento_idestabelecimento((Integer) session.getAttribute("user_id"));
+                                                List<ItemModel> itens = itemdao.listarItem(catList.get(i));
+                                                for (int o = 0; o < itens.size(); o++) {%>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="txt-oflo"><img src="plugins/images/users/<%out.print(session.getAttribute("user_image"));%>" alt="user-img" width="36" class="img-circle"></td>
+                                                    <td class="txt-oflo"><%out.print(itens.get(o).getNome());%></td>
+                                                    <td class="txt-oflo"><%out.print(itens.get(o).getDescricao());%></td>
+                                                    <td class="txt-oflo"><span class="text-success">R$<%out.print(itens.get(o).getPreco());%></span></td>
+                                                    <td class="txt-oflo"><div class="dropdown">
+                                                            <span><i class="fas fa-angle-down"></i></span>
+                                                            <div class="dropdown-content">
+                                                                <a href=''><i class="fas fa-edit"></i>Editar</a><br>
+                                                                <a href=''><i class="fas fa-trash-alt"></i>Excluir</a>
+                                                            </div>
+                                                        </div></td>
 
-                                            </tr>
-                                        </tbody>
-                                        <%}%>
-                                        <tbody>
-                                            <tr style="background-color: #EEEFF0;">
-                                                <td class="txt-oflo"><input type="file"></td>
-                                                <td class="txt-oflo"><input type="text" placeholder="Nome" class="form-control p-0 border-0" name="nome<%out.print(catList.get(i).getIdcategoria());%>"></td>
-                                                <td class="txt-oflo"><input type="text" placeholder="Descrição" class="form-control p-0 border-0" name="descricao<%out.print(catList.get(i).getIdcategoria());%>"></td>  
-                                                <td class="txt-oflo"><input type="number" placeholder="Preço" class="form-control p-0 border-0" name="preco<%out.print(catList.get(i).getIdcategoria());%>" ></td> 
-                                                <td class="txt-oflo"><button onclick="javascript:adicionaritem('criaritem?keycategoria=<%out.print(catList.get(i).getIdcategoria());%>')">Add Item</button></td>
-                                            </tr>
-                                        </tbody>
-                                        <%}%>
-                                    </table>
+                                                </tr>
+                                            </tbody>
+                                            <%}%>
+                                            <tbody>
+                                                <tr style="background-color: #EEEFF0;">
+                                                    <td class="txt-oflo"><input type="file"></td>
+                                                    <td class="txt-oflo"><input type="text" placeholder="Nome" class="form-control p-0 border-0" name="nome<%out.print(catList.get(i).getIdcategoria());%>"></td>
+                                                    <td class="txt-oflo"><input type="text" placeholder="Descrição" class="form-control p-0 border-0" name="descricao<%out.print(catList.get(i).getIdcategoria());%>"></td>  
+                                                    <td class="txt-oflo"><input type="number" placeholder="Preço" class="form-control p-0 border-0" name="preco<%out.print(catList.get(i).getIdcategoria());%>" ></td> 
+                                                    <td class="txt-oflo"><button onclick="javascript:adicionaritem('criaritem?keycategoria=<%out.print(catList.get(i).getIdcategoria());%>')">Add Item</button></td>
+                                                </tr>
+                                            </tbody>
+                                            <%}%>
+                                        </table>
                                     </form>                                    
                                 </div>
                             </div>
@@ -183,23 +206,23 @@
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="plugins/bower_components/popper.js/dist/umd/popper.min.js"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/app-style-switcher.js"></script>
-    <!--Wave Effects -->
-    <script src="js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="js/custom.js"></script>
-</body>
+        <!-- ============================================================== -->
+        <!-- End Wrapper -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- All Jquery -->
+        <!-- ============================================================== -->
+        <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="plugins/bower_components/popper.js/dist/umd/popper.min.js"></script>
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/app-style-switcher.js"></script>
+        <!--Wave Effects -->
+        <script src="js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="js/custom.js"></script>
+    </body>
 
 </html>

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <error-page>
+        <error-code>500</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page> 
     <servlet>
         <servlet-name>CadastrarServlet</servlet-name>
         <servlet-class>servlet.CadastrarServlet</servlet-class>
@@ -91,7 +99,7 @@
     <servlet-mapping>
         <servlet-name>CriarItem</servlet-name>
         <url-pattern>/criaritem</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping> 
     <session-config>
         <session-timeout>
             30
