@@ -21,6 +21,7 @@
 <html dir="ltr" lang="en">
 
     <head>
+        <link rel="stylesheet" href="css/styles-popup.css">
         <%@include file="head.jsp" %>
         <script type="text/javascript">
             function togglePopup() {
@@ -31,10 +32,15 @@
                 document.forms['form_itens'].submit();
 
             }
+            function excluiritem(txt) {
+                document.forms['form_itens'].action = txt;
+                document.forms['form_itens'].submit();
+
+            }
         </script>
         <style>
             .dropdown {
-                position:absolute;
+                position: relative;
                 display: inline-block;
             }
 
@@ -42,7 +48,7 @@
                 display: none;
                 position: absolute;
                 background-color: #f9f9f9;
-                min-width: 160px;
+                min-width: 10px;
                 padding: 12px 16px;
                 z-index: 1;
             }
@@ -53,7 +59,7 @@
         </style>
     </head>
 
-    <body>
+    <body data-spy="scroll" data-target=".fixed-top">
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
@@ -71,6 +77,7 @@
 
             <%@include file="menu.jsp" %>
 
+
             <div class="page-wrapper">
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
@@ -78,7 +85,7 @@
                 <div class="page-breadcrumb bg-white">
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                            <h4 class="page-title text-uppercase font-medium font-14">Basic Table</h4>
+                            <h4 class="page-title text-uppercase font-medium font-14">Meu Cárdapio</h4>
                         </div>
                         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                             <div class="d-md-flex">
@@ -135,10 +142,10 @@
                                                     <td class="txt-oflo"><%out.print(itens.get(o).getDescricao());%></td>
                                                     <td class="txt-oflo"><span class="text-success">R$<%out.print(itens.get(o).getPreco());%></span></td>
                                                     <td class="txt-oflo"><div class="dropdown">
-                                                            <span><i class="fas fa-angle-down"></i></span>
+                                                            <span><i class="fas fa-angle-down"></i>&nbsp;  mais</span>
                                                             <div class="dropdown-content">
-                                                                <a href=''><i class="fas fa-edit"></i>Editar</a><br>
-                                                                <a href=''><i class="fas fa-trash-alt"></i>Excluir</a>
+                                                                <a href="#" onclick="javascript:showEdit()" class="editLink"><i class="fas fa-edit"></i>&nbsp;Editar</a><br>
+                                                                <a href="javascript:excluiritem('excluiritem?key=<%out.print(itens.get(o).getIditem());%>')"><i class="fas fa-trash-alt"></i>&nbsp;Excluir</a>
                                                             </div>
                                                         </div></td>
 
@@ -177,7 +184,7 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </div>   
                 </div>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
@@ -189,6 +196,7 @@
                 <!-- ============================================================== -->
                 <!-- End Right sidebar -->
                 <!-- ============================================================== -->
+
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -202,6 +210,18 @@
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
+                    <div class="popup-container hide"></div>
+
+        <form class="popup-form hide" action="#" method="POST">
+            <h1>Editar Item</h1>
+            <input class="input-field" type="file" />
+
+            <input class="input-field" type="password" name="password" placeholder="Password" required />
+            <input class="input-field submit-btn" type="submit" name="submit" value="Login">
+
+            <!-- close btn -->
+            <div class="close-btn">&times;</div>
+        </form>
         </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
@@ -212,6 +232,8 @@
         <!-- ============================================================== -->
         <!-- All Jquery -->
         <!-- ============================================================== -->
+
+        <script src="js/popup-effect.js"></script>
         <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
         <!-- Bootstrap tether Core JavaScript -->
         <script src="plugins/bower_components/popper.js/dist/umd/popper.min.js"></script>
@@ -223,6 +245,8 @@
         <script src="js/sidebarmenu.js"></script>
         <!--Custom JavaScript -->
         <script src="js/custom.js"></script>
+        
+
     </body>
 
 </html>

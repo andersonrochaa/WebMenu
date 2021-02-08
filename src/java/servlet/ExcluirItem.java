@@ -19,7 +19,7 @@ import model.ItemModel;
  *
  * @author Alexandre
  */
-public class CriarItem extends HttpServlet {
+public class ExcluirItem extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,27 +31,22 @@ public class CriarItem extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException { 
+            throws ServletException, IOException {
         try{
         HttpSession session = request.getSession(true);
         
         ItemDAO itdao = new ItemDAO();
         ItemModel it = new ItemModel();
         
-        int idcategoria = Integer.parseInt(request.getParameter("keycategoria"));
-
-        it.setNome(request.getParameter("nome"+idcategoria));
+        it.setIditem(Integer.parseInt(request.getParameter("key")));
+        
         it.setEstabelecimento_idestabelecimento((Integer) session.getAttribute("user_id"));
-        it.setDescricao(request.getParameter("descricao"+idcategoria));
-        it.setCategoria_idcategoria(idcategoria);
-        String preco = request.getParameter("preco"+idcategoria);
-        it.setPreco(Double.parseDouble(preco));
-        itdao.cadastrar(it);
+        itdao.excluir(it);
         response.sendRedirect("cardapio");
         }catch(Exception e){
-        response.sendRedirect("cardapio");
-        }
+        response.sendRedirect("estabelecimento.jsp");
 
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

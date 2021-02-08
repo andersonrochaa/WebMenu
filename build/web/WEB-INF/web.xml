@@ -7,7 +7,7 @@
     <error-page>
         <error-code>404</error-code>
         <location>/404.jsp</location>
-    </error-page> 
+    </error-page>
     <servlet>
         <servlet-name>CadastrarServlet</servlet-name>
         <servlet-class>servlet.CadastrarServlet</servlet-class>
@@ -56,6 +56,10 @@
         <servlet-name>CriarItem</servlet-name>
         <servlet-class>servlet.CriarItem</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ExcluirItem</servlet-name>
+        <servlet-class>servlet.ExcluirItem</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarServlet</servlet-name>
         <url-pattern>/CadastrarServlet</url-pattern>
@@ -99,7 +103,11 @@
     <servlet-mapping>
         <servlet-name>CriarItem</servlet-name>
         <url-pattern>/criaritem</url-pattern>
-    </servlet-mapping> 
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExcluirItem</servlet-name>
+        <url-pattern>/excluiritem</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

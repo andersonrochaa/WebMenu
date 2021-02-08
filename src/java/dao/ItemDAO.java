@@ -41,6 +41,7 @@ public class ItemDAO {
 
             while (rs.next()) {
                 ItemModel item = new ItemModel();
+                item.setIditem(rs.getInt("iditem"));
                 item.setNome(rs.getString("nome"));
                 item.setDescricao(rs.getString("descricao"));
                 item.setPreco(rs.getDouble("preco"));
@@ -80,7 +81,7 @@ public class ItemDAO {
         }
         return false;
     }
-    public int cadastrar(ItemModel it) {
+    public boolean cadastrar(ItemModel it) {
         try {
 
             String sql = "insert into item (categoria_idcategoria,estabelecimento_idestabelecimento,nome,preco,descricao) values (?,?,?,?,?)";
@@ -97,10 +98,30 @@ public class ItemDAO {
             ps.close();
             conBD.fecharConexao();
 
-            return 1;
+            return true;
         } catch (SQLException ex) {
             Logger.getLogger(EstabelecimentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return 0;
+        return false;
+    }
+        public boolean excluir(ItemModel it) {
+        try {
+
+            String sql = "DELETE FROM item WHERE iditem = ? and estabelecimento_idestabelecimento = ?";
+
+            //PreparedStatement ps = conBD.abrirConexao().prepareStatement(sql);
+            PreparedStatement ps = conBD.abrirConexao().prepareStatement(sql);
+            ps.setInt(1, it.getIditem());
+            ps.setInt(2, it.getEstabelecimento_idestabelecimento());
+            
+            ps.executeUpdate();
+            ps.close();
+            conBD.fecharConexao();
+
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(EstabelecimentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
 }

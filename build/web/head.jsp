@@ -26,7 +26,7 @@
         <meta name="description"
               content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
         <meta name="robots" content="noindex,nofollow">
-        <title><%out.print(session.getAttribute("user_name"));%></title>
+        <title><%out.print(session.getAttribute("user_name"));%> - Gerenciar</title>
         <!-- Favicon icon -->
         <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
         <!-- Custom CSS -->
