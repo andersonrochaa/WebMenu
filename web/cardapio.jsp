@@ -144,7 +144,7 @@
                                                     <td class="txt-oflo"><div class="dropdown">
                                                             <span><i class="fas fa-angle-down"></i>&nbsp;  mais</span>
                                                             <div class="dropdown-content">
-                                                                <a href="#" onclick="javascript:showEdit()" class="editLink"><i class="fas fa-edit"></i>&nbsp;Editar</a><br>
+                                                                <a href="#" onclick="javascript:showEdit(<%out.print(itens.get(o).getIditem());%>)" class="editLink"><i class="fas fa-edit"></i>&nbsp;Editar</a><br>
                                                                 <a href="javascript:excluiritem('excluiritem?key=<%out.print(itens.get(o).getIditem());%>')"><i class="fas fa-trash-alt"></i>&nbsp;Excluir</a>
                                                             </div>
                                                         </div></td>
@@ -212,12 +212,13 @@
             <!-- ============================================================== -->
                     <div class="popup-container hide"></div>
 
-        <form class="popup-form hide" action="#" method="POST">
+        <form class="popup-form hide" id="form_update_item" method="POST">
             <h1>Editar Item</h1>
             <input class="input-field" type="file" />
-
-            <input class="input-field" type="password" name="password" placeholder="Password" required />
-            <input class="input-field submit-btn" type="submit" name="submit" value="Login">
+            <input id="nome_update_item" class="input-field" type="text" name="nome_update" placeholder="Nome" required />
+            <input id="descricao_update_item" class="input-field" type="text" name="descricao_update" placeholder="Descrição" required />
+            <input id="preco_update_item" class="input-field" type="number" name="preco_update" placeholder="Preço" required />
+            <button onclick="UpdateItem()" class="input-field submit-btn">Alterar</button>
 
             <!-- close btn -->
             <div class="close-btn">&times;</div>

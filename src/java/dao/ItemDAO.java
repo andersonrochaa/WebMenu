@@ -104,6 +104,29 @@ public class ItemDAO {
         }
         return false;
     }
+        public boolean alterar(ItemModel it) {
+        try {
+
+            String sql = "UPDATE item SET nome = ?, preco = ?, descricao = ? WHERE iditem = ? and estabelecimento_idestabelecimento = ?";
+
+            //PreparedStatement ps = conBD.abrirConexao().prepareStatement(sql);
+            PreparedStatement ps = conBD.abrirConexao().prepareStatement(sql);
+            ps.setString(1, it.getNome());
+            ps.setString(3, it.getDescricao());
+            ps.setDouble(2, it.getPreco());
+            ps.setInt(4, it.getIditem());
+            ps.setInt(5, it.getEstabelecimento_idestabelecimento());
+            
+            ps.executeUpdate();
+            ps.close();
+            conBD.fecharConexao();
+
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(EstabelecimentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
         public boolean excluir(ItemModel it) {
         try {
 

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <error-page>
-        <error-code>500</error-code>
-        <location>/404.jsp</location>
-    </error-page>
-    <error-page>
         <error-code>404</error-code>
         <location>/404.jsp</location>
     </error-page>
@@ -60,6 +56,10 @@
         <servlet-name>ExcluirItem</servlet-name>
         <servlet-class>servlet.ExcluirItem</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateItem</servlet-name>
+        <servlet-class>servlet.UpdateItem</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarServlet</servlet-name>
         <url-pattern>/CadastrarServlet</url-pattern>
@@ -107,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>ExcluirItem</servlet-name>
         <url-pattern>/excluiritem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateItem</servlet-name>
+        <url-pattern>/updateitem</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
