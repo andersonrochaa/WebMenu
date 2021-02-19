@@ -11,12 +11,12 @@
 
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
-        <link href="css/bootstrap.css" rel="stylesheet">
+        <!--<link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/fontawesome-all.css" rel="stylesheet">
         <link href="css/swiper.css" rel="stylesheet">
         <link href="css/magnific-popup.css" rel="stylesheet">
         <link href="css/fontawesome-all.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">-->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- Tell the browser to be responsive to screen width -->
